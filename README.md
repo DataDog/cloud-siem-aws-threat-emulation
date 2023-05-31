@@ -46,6 +46,10 @@ alias stratus="docker run --rm -v $HOME/.stratus-red-team/:/root/.stratus-red-te
 
 After installing Stratus Red Team, to begin emulating attacks within your AWS Sandbox you can following these steps using the CLI:
 
+- Utilizing the **stratus.sh** you can detonate all available stratus attacks in one go.
+
+Alternatively, you can detonate the stratus techniques individually as shown below.
+
 - Detonate an attack technique:
 ```
 stratus detonate aws.exfiltration.s3-backdoor-bucket-policy
