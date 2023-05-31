@@ -9,7 +9,7 @@
 
 
 ## Introduction
-The Cloud SIEM AWS Threat Emulation Guide is designed to simpliify the process of evaluating Datadog's Cloud SIEM security capabilites to detect AWS threats and alert in real time by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
+The Cloud SIEM AWS Threat Emulation Guide is designed to simplify the process of evaluating Datadog's Cloud SIEM security capabilities to detect AWS threats and alert in real time by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
 
 ## Prerequisites
 - A functional Datadog trial or production enrionment with:
