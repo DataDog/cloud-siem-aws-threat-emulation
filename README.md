@@ -44,50 +44,21 @@ alias stratus="docker run --rm -v $HOME/.stratus-red-team/:/root/.stratus-red-te
 
 ## Emulating Attacks
 
-After installing Stratus Red Team, to begin emulating attacks within your AWS Sandbox you can following these step using the CLI:
+After installing Stratus Red Team, to begin emulating attacks within your AWS Sandbox you can following these steps using the CLI:
 
-- List available TTPS:
-
+- Detonate an attack technique:
 ```
-# List all techniques
-stratus list
-
-# List all discovery techniques
-stratus list --mitre-attack-tactic discovery
-
-# List all AWS tactics
-stratus list --platform aws
+stratus detonate aws.exfiltration.s3-backdoor-bucket-policy
 ```
 
-- View details of a specific techniqe:
-
-Example
+- Detonate multiple attack techniques:
 ```
-stratus show aws.discovery.ec2-enumerate-from-instance
+stratus detonate aws.exfiltration.s3-backdoor-bucket-policy aws.defense-evasion.cloudtrail-stop
 ```
-Result
+
+- Detonate an attack technique, then automatically clean up any resources deployed on AWS
 ```
-Runs several discovery commands on an EC2 instance:
-
-- sts:GetCallerIdentity
-- s3:ListBuckets
-- iam:GetAccountSummary
-- iam:ListRoles
-- iam:ListUsers
-- iam:GetAccountAuthorizationDetails
-- ec2:DescribeSnapshots
-- cloudtrail:DescribeTrails
-- guardduty:ListDetectors
-
-The commands will be run under the identity of the EC2 instance role, simulating an attacker having compromised an EC2 instance and running discovery commands on it.
-
-Warm-up:
-
-- Create the prerequisite EC2 instance and VPC (takes a few minutes).
-
-Detonation:
-
-- Run the discovery commands, over SSM. The commands will be run under the identity of the EC2 instance role.
+stratus detonate aws.exfiltration.s3-backdoor-bucket-policy --cleanup
 ```
 
 For more details on usage, refer to the [Stratus Red Team Usage Guide](https://stratus-red-team.cloud/user-guide/usage/) and [Stratus Red Team Command Reference](https://stratus-red-team.cloud/user-guide/commands/)
