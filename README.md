@@ -1,4 +1,4 @@
-# Cloud SIEM AWS Threat Emulation Guide
+# Datadog AWS Threat Emulation & Detection Validation Guide
 
 ## Table of Contents
 - [Introduction](#introduction)
