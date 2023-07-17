@@ -24,7 +24,7 @@ The Datadog AWS Threat Emulation & Detection Validation Guide is designed to sim
 ***Although Stratus Red Team supports attacks for other platforms including Azure, Google Cloud and Kubernetes, this guide is currenty limited to AWS.***
 
 ## Installation
-To install Stratus Red Team within your threat emulation environment, follow the [Stratus Red Team installation guide](https://stratus-red-team.cloud/user-guide/getting-started/#installation):
+To install Stratus Red Team within your threat emulation environment, follow the [Stratus Red Team installation guide](https://stratus-red-team.cloud/user-guide/getting-started/#installation).
 
 ## Emulating Attacks
 
