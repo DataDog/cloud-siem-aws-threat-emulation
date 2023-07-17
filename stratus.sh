@@ -1,11 +1,27 @@
 #!/bin/bash
 
-GREEN='\033[0;32m'  # Green color
-NC='\033[0m'       # No color
+GREEN='\033[0;32m'  
+RED='\033[0;31m'    
+CHECKMARK='\xE2\x9C\x85' 
+CROSS='\xE2\x9D\x8C'  
+NC='\033[0m'      
 
+successful_attacks=()
+failed_attacks=()
+
+start_time=$(date +%s.%N)  
 run_attack() {
-    echo -e "${GREEN}Running attack: $@${NC}"
-    stratus detonate "$@"
+    echo -e "${REFRESH}${GREEN}Running attack: $@${NC}"
+    output=$(stratus detonate "$@" 2>&1)
+    if [[ $output =~ "Error" ]]; then
+        echo -e "${RED}${CROSS} Attack: $@ did not run successfully${NC}"
+        error_message=$(echo "$output" | sed -n '/Error: /s/.*Error: //p')
+        echo -e "${RED}$error_message${NC}"
+        failed_attacks+=("$@ - Error: $error_message")
+    else
+        echo -e "${GREEN}${CHECKMARK} Successful${NC}"
+        successful_attacks+=("$@")
+    fi
 }
 
 attacks=(
@@ -38,6 +54,27 @@ attacks=(
     "aws.persistence.rolesanywhere-create-trust-anchor"
 )
 
-for attack in "${attacks[@]}"; do
-    run_attack "$attack"
+for (( i = 0; i < ${#attacks[@]}; i++ )); do
+    run_attack "${attacks[$i]}"
+    if (( i + 1 < ${#attacks[@]} )); then
+        echo -e "\nNext attack: ${attacks[$i + 1]}"
+    fi
 done
+
+end_time=$(date +%s.%N)  
+execution_time=$(echo "($end_time - $start_time)" | bc -l)  
+minutes=$(printf "%.0f" $(echo "$execution_time / 60" | bc -l))  
+seconds=$(printf "%.2f" $(echo "$execution_time % 60" | bc -l)) 
+
+echo -e "${GREEN}\n---- ${CHECKMARK}Successful Attacks ----${NC}"
+for attack in "${successful_attacks[@]}"; do
+    echo "$attack"
+done
+
+echo -e "${RED}\n---- ${CROSS}Failed Attacks ----${NC}"
+for attack in "${failed_attacks[@]}"; do
+    echo "$attack"
+done
+
+echo -e "\n---- Overall Execution Time ----"
+echo "Total Execution Time: ${minutes}m ${seconds}s"
