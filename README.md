@@ -10,7 +10,7 @@
 
 
 ## Introduction
-The Cloud SIEM AWS Threat Emulation Guide is designed to simplify the process of evaluating Datadog's Cloud SIEM security capabilities to detect AWS threats and alert in real time by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
+The Datadog AWS Threat Emulation & Detection Validation Guide is designed to simplify the process of evaluating Datadog's Cloud SIEM security capabilities to detect AWS threats and alert in real time by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
 
 ## Prerequisites
 - A functional Datadog trial or production environment with:
@@ -24,28 +24,12 @@ The Cloud SIEM AWS Threat Emulation Guide is designed to simplify the process of
 ***Although Stratus Red Team supports attacks for other platforms including Azure, Google Cloud and Kubernetes, this guide is currenty limited to AWS.***
 
 ## Installation
-To install Stratus Red Team within your threat emulation environment, follow any of the following steps:
-
-- Mac OS:
-
-```
-brew tap datadog/stratus-red-team https://github.com/DataDog/stratus-red-team
-brew install datadog/stratus-red-team/stratus-red-team
-```
-
-- Linux / Windows / Mac OS: Download one of the [pre-built binaries](https://github.com/datadog/stratus-red-team/releases).
-
-- Docker:
-
-```bash
-IMAGE="ghcr.io/datadog/stratus-red-team"
-alias stratus="docker run --rm -v $HOME/.stratus-red-team/:/root/.stratus-red-team/ -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_DEFAULT_REGION $IMAGE"
-```
+To install Stratus Red Team within your threat emulation environment, follow the [Stratus Red Team installation guide](https://stratus-red-team.cloud/user-guide/getting-started/#installation):
 
 ## Emulating Attacks
 
 ### Detonate all attacks
-Utilizing the **stratus.sh** script you can detonate all available stratus attacks in one go.
+Utilizing the **stratus.sh** script you can detonate all available stratus attacks in one go. Bear in mind that this process takes around 30 mins to complete.
 
 ### Detonate individual attacks
 
