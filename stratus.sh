@@ -11,7 +11,7 @@ failed_attacks=()
 
 start_time=$(date +%s.%N)  
 run_attack() {
-    echo -e "${REFRESH}${GREEN}Running attack: $@${NC}"
+    echo -e "${GREEN}Running attack: $@${NC}"
     output=$(stratus detonate "$@" 2>&1)
     if [[ $output =~ "Error" ]]; then
         echo -e "${RED}${CROSS} Attack: $@ did not run successfully${NC}"
