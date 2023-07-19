@@ -17,9 +17,10 @@ The Datadog AWS Threat Emulation Guide is designed to simplify the process of ev
     - [Cloud SIEM enabled](https://docs.datadoghq.com/getting_started/cloud_siem/)
     - [AWS CloudTrail logging](https://docs.datadoghq.com/security/cloud_siem/guide/aws-config-guide-for-cloud-siem/)
 - AWS Sandbox account - Stratus Red Team is supposed to be used against a sandbox cloud account that does not handle production workloads or infrastructure.
-- Prior AWS authentication via cli using either `aws-vault` or static credentials in `~/.aws/config` with `AdministratorAccess`
 - An endpoint for installing Stratus Red Team and executing attack techniques against AWS infrastructure.
     - Stratus [supports](https://stratus-red-team.cloud/user-guide/getting-started/) MacOS, Linux, Windows & Docker.
+- Prior AWS authentication via cli using either `aws-vault` or static credentials in `~/.aws/config` with `AdministratorAccess`
+
 
 ***Although Stratus Red Team supports attacks for other platforms including Azure, Google Cloud and Kubernetes, this guide is currenty limited to AWS.***
 
