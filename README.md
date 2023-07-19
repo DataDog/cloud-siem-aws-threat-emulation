@@ -1,4 +1,4 @@
-# Datadog AWS Threat Emulation & Detection Validation Guide
+# Datadog AWS Threat Emulation 
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -10,7 +10,7 @@
 
 
 ## Introduction
-The Datadog AWS Threat Emulation & Detection Validation Guide is designed to simplify the process of evaluating Datadog's Cloud SIEM security capabilities to detect AWS threats and alert in real time by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
+The Datadog AWS Threat Emulation Guide is designed to simplify the process of evaluating Datadog's Cloud SIEM security capabilities to detect AWS threats and alert in real time by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
 
 ## Prerequisites
 - A functional Datadog trial or production environment with:
