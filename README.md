@@ -1,4 +1,4 @@
-# Datadog AWS Threat Emulation 
+# Datadog AWS Threat Emulation Guide
 
 ## Table of Contents
 - [Introduction](#introduction)
