@@ -6,8 +6,6 @@
 - [Installation](#installation)
 - [Emulating Attacks](#emulating-attacks)
 - [Validating Detections](#validating-detections)
-- [Contributing](#contributing)
-
 
 ## Introduction
 The Datadog AWS Threat Emulation Guide simplifies the process of evaluating Datadog's Cloud SIEM security capabilities to detect AWS threats and alert in real time. This is done by simulating attacks using [Stratus Red Team](https://github.com/DataDog/stratus-red-team).
@@ -93,5 +91,3 @@ Expect some of the following detections for the corresponding detonated Stratus 
 | [Create an administrative IAM User](https://stratus-red-team.cloud/attack-techniques/AWS/aws.persistence.iam-create-admin-user/)                            	| [AWS IAM AdministratorAccess policy was applied to a user](https://docs.datadoghq.com/security/default_rules/cloudtrail-aws-iam-apply-privilegedpolicy-to-user/)                                                                                                                                                                          	|
 | [Create a Login Profile on an IAM User](https://stratus-red-team.cloud/attack-techniques/AWS/aws.persistence.iam-create-user-login-profile/)                	| [Possible privilege escalation via AWS login profile manipulation](https://docs.datadoghq.com/security/default_rules/cloudtrail-aws-iam-login-profile-manipulated/)                                                                                                                                                                       	|
 
-## Contributing
-At this time, the repository is not accepting contributions.
