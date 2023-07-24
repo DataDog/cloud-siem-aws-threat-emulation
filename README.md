@@ -26,9 +26,6 @@ To install Stratus Red Team within your threat emulation environment, follow the
 
 ## Emulating Attacks
 
-### Detonate all attacks
-Utilizing the **stratus.sh** script, you can detonate all available stratus attacks at once. This process takes around 30 minutes to complete.
-
 ### Detonate individual attacks
 
 Alternatively, you can detonate the stratus attacks individually as shown below.
@@ -47,6 +44,9 @@ stratus detonate aws.exfiltration.s3-backdoor-bucket-policy aws.defense-evasion.
 ```
 stratus detonate aws.exfiltration.s3-backdoor-bucket-policy --cleanup
 ```
+
+### Detonate all attacks
+Utilizing the **stratus.sh** script, you can detonate all available stratus attacks at once. This process takes around 30 minutes to complete.
 
 ### Cleanup 
 - Cleanup a specific attack technique
